@@ -548,19 +548,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\juesd\\.nuget\\packages\\": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioAlmacen\\Business\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "G:\\Mi unidad\\Felipe opitech\\capacitación c#\\primeros pasos\\Business\\Business\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioAlmacen\\Business\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\juesd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juesd\\OneDrive\\Escritorio\\EjercicioAlmacen\\Business\\Infrastructure\\obj\\",
+      "projectPath": "G:\\Mi unidad\\Felipe opitech\\capacitación c#\\primeros pasos\\Business\\Business\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "G:\\Mi unidad\\Felipe opitech\\capacitación c#\\primeros pasos\\Business\\Business\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\juesd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -607,7 +607,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.2.23502.2\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

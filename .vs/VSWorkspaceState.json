@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Business",
+    "\\Business\\Domain",
+    "\\Business\\Infrastructure"
   ],
-  "SelectedNode": "\\G:\\Mi unidad\\Felipe opitech\\capacitación c#\\primeros pasos\\Business",
+  "SelectedNode": "\\Business\\Infrastructure\\obj",
   "PreviewInSolutionExplorer": false
 }
