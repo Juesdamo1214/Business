@@ -12,5 +12,6 @@ namespace Domain
         public string? ProductId { get; set; }
         public float Tax05 { get; set; }
         public float Tax19 { get; set;}
+        public virtual Product? Product { get; set; }
     }
 }

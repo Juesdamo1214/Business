@@ -17,5 +17,6 @@ namespace Domain
         public string? Country { get; set; }
         public string? City { get; set; }
         public string? CelPhone { get; set; }
+        public virtual ICollection<Order>? Order { get; set; }
     }
 }
