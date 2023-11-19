@@ -10,5 +10,6 @@ namespace Domain
     {
         public Guid ProductGroupId { get; set; }
         public string? ProductName { get; set; }
+        public Guid TaxId { get; set; }//fk
     }
 }

@@ -8,8 +8,8 @@ namespace Domain
 {
     public class Order
     {
-        public int OrderId { get; set; }
-        public ICollection<Transaction>? Transaction { get; set; }
+        public ulong OrderId { get; set; }
+        public Guid CustomerId { get; set; }//fk
         public DateTime OrderDate { get; set; }
         public float Subtotal { get; set; }
         public float totalTax { get; set; }

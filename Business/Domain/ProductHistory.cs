@@ -9,7 +9,7 @@ namespace Domain
     public class ProductHistory
     {
         public Guid PriceProductHistoryId { get; set; }
-        public string? ProductId { get; set; }
+        public string? ProductId { get; set; }//fk
         public DateTime? PriceModificationDate { get; set; }
         public float PriceWithoutTaxes { get; set; }
         public float Tax { get; set; }
