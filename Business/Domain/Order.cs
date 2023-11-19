@@ -8,9 +8,12 @@ namespace Domain
 {
     public class Order
     {
-        public int ConsecutivePurchaseNumberId { get; set; }
-        public Guid TransactionId { get; set; }
-        public DateTime DatePurchase { get; set; }
-        public virtual ICollection<Product>? Product { get; set; }
+        public int OrderId { get; set; }
+        public ICollection<Transaction>? Transaction { get; set; }
+        public DateTime OrderDate { get; set; }
+        public float Subtotal { get; set; }
+        public float totalTax { get; set; }
+        public float Total { get; set; }
+        public virtual ICollection<Transaction>? Transaction { get; set; }
     }
 }

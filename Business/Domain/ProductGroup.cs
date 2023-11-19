@@ -9,5 +9,6 @@ namespace Domain
     public class ProductGroup
     {
         public Guid ProductGroupId { get; set; }
+        public string? ProductName { get; set; }
     }
 }
