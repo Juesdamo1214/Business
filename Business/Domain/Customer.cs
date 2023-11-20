@@ -16,7 +16,7 @@ namespace Domain
         public string? Email {  get; set; }
         public string? Country { get; set; }
         public string? City { get; set; }
-        public string? CelPhone { get; set; }
+        public string? CellPhone { get; set; }
         public virtual ICollection<Order>? Order { get; set; }
     }
 }
