@@ -7,9 +7,7 @@ namespace Infrastructure.DataAccess
     {
         DbSet<Customer> Customers { get; set; }
         DbSet<Order> Orders { get; set; }
-        DbSet<OrderHistory> OrdersHistory { get; set; }
         DbSet<Product> Products { get; set; }
-        DbSet<ProductGroup> ProductGroups { get; set; }
         DbSet<ProductHistory> ProductsHistory { get; set; }
         DbSet<Tax> Taxes { get; set; }
         DbSet<Transaction> Transactions { get; set; }
@@ -18,54 +16,60 @@ namespace Infrastructure.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //List<Course> courseInit = new List<Course>();
-            //courseInit.Add(new Course() { CourseId = Guid.Parse("22f973e1-f297-4884-b522-2540b44750f5"), Name = "sexto" });
 
             modelBuilder.Entity<Customer>(customer =>
             {
-                customer.ToTable("Customers");
-
-                course.HasKey(p => p.CourseId);
-
-                course.Property(p => p.Name).IsRequired().HasMaxLength(50);
-
-                //course.HasData(courseInit);
-
+                customer.ToTable("Customer");
+                customer.HasKey(p => p.CustomerId);
+                customer.Property(p => p.CustomerName).IsRequired().HasMaxLength(150);
+                customer.Property(P => P.CreateDate);
+                customer.Property(P => P.Address);
+                customer.Property(P => P.Email).IsRequired().HasMaxLength(200);
+                customer.Property(P => P.Country).IsRequired();
+                customer.Property(P => P.City).IsRequired();
+                customer.Property(P => P.CellPhone).IsRequired();
             });
 
-            //List<Student> studentInit = new List<Student>();
-            //studentInit.Add(new Student() { StudentId = Guid.Parse("22f973e1-f297-4884-b522-2540b44750f4"), CourseId = Guid.Parse("22f973e1-f297-4884-b522-2540b44750f5"), Name = "William lasso", Age = 10 });
-
-            modelBuilder.Entity<Student>(student =>
+            modelBuilder.Entity<Order>(order =>
             {
-                student.ToTable("Student");
+                order.ToTable("Order");
 
-                student.HasKey(p => p.StudentId);
+                order.HasKey(p => p.OrderId);
+                order.Property(p => p.OrderDate);
+                order.Property(p => p.Subtotal);
+                order.Property(p => p.TotalTax);
+                order.Property(p => p.Total);
 
-                student.HasOne(p => p.Course).WithMany(p => p.Student).HasForeignKey(p => p.CourseId)
-                .OnDelete(DeleteBehavior.Cascade).IsRequired();
-
-                student.Property(p => p.Name).IsRequired().HasMaxLength(50);
-
-                student.Property(p => p.Age).IsRequired();
-
-                //student.HasData(studentInit);
+                order.HasOne(p => p.Customer).WithMany(p => p.Order).HasForeignKey(p => p.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<NightStudent>(student =>
+            modelBuilder.Entity<Product>(product =>
             {
-                student.ToTable("NightStudent");
+                product.ToTable("Product");
 
-                student.HasKey(p => p.NightStudentId);
+                product.HasKey(p => p.ProductId);
+                product.Property(p => p.ProductName).IsRequired().HasMaxLength(100);
+                product.Property(p => p.ProductCreationDate);
+                product.Property(p => p.Subtotal);
+                product.Property(p => p.Price);
+                product.Property(p => p.StockHistory);
 
-                student.HasOne(p => p.Course).WithMany(p => p.NightStudent).HasForeignKey(p => p.CourseId)
-                .OnDelete(DeleteBehavior.Cascade).IsRequired();
+                product.HasOne(p => p.Tax).WithMany(p => p.Products).HasForeignKey(p => p.TaxId);
+            });
 
-                student.Property(p => p.Name).IsRequired().HasMaxLength(50);
+            modelBuilder.Entity<ProductHistory>(productHistory =>
+            {
+                productHistory.ToTable("ProductHistory");
 
-                student.Property(p => p.Age).IsRequired();
+                productHistory.HasKey(p => p.ProductHistoryId);
+                productHistory.Property(p => p.PriceModificationDate);
+                productHistory.Property(p => p.Subtotal);
+                productHistory.Property(p => p.Tax);
+                productHistory.Property(p => p.Price);
+                productHistory.Property(p => p.StockHistory);
 
-                //student.HasData(studentInit);
+                productHistory.HasOne(p => p.Product).WithMany(p => p.ProductHistory).HasForeignKey(p => p.ProductId);
             });
 
         }

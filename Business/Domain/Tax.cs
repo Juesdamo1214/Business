@@ -9,7 +9,8 @@ namespace Domain
     public class Tax
     {
         public Guid TaxId { get; set; }
-        public float TaxProduct { get; set; }
+        public string TaxName { get; set; }
+        public decimal TaxValue { get; set; }
         public virtual ICollection<Product>? Products { get; set; }
     }
 }
