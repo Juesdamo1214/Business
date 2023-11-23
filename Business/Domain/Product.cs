@@ -16,7 +16,7 @@ namespace Domain
         public float Price { get; set; }
         public int StockHistory { get; set; }
         public virtual Tax? Tax { get; set; }
-        public virtual ICollection<Transaction>? Transactions { get; set; }
+        public virtual ICollection<Transaction>? Transaction { get; set; }
         public virtual ICollection<ProductHistory>? ProductHistory { get; set; }
 
     }

@@ -72,6 +72,31 @@ namespace Infrastructure.DataAccess
                 productHistory.HasOne(p => p.Product).WithMany(p => p.ProductHistory).HasForeignKey(p => p.ProductId);
             });
 
+            modelBuilder.Entity<Tax>(productHistory =>
+            {
+                productHistory.ToTable("Tax");
+
+                productHistory.HasKey(p => p.TaxId);
+                productHistory.Property(p => p.TaxName);
+                productHistory.Property(p => p.TaxValue);
+            });
+
+             modelBuilder.Entity<Transaction>(productHistory =>
+            {
+                productHistory.ToTable("Transaction");
+
+                productHistory.HasKey(p => p.TransactionId);
+                productHistory.Property(p => p.QuantityProduct);
+
+                productHistory.HasOne(p => p.Product).WithMany(p => p.Transaction).HasForeignKey(p => p.ProductId);
+                productHistory.HasOne(p => p.Order).WithMany(p => p.Transaction).HasForeignKey(p => p.OrderId);
+
+
+
+            });
+
+
+
         }
     }
 
